@@ -9,8 +9,6 @@ def self.crc32_crack(start_letter, end_letter, length, salt, hash) # Gets the cr
   end
 
 def self.crc32_check(str, js_32_bit = true)
-  table = Zlib::crc_table.map {|el| el.to_s(16).upcase} # hex crc32 table
-
   crc = 0
   crc = crc ^ (-1)
 
@@ -18,7 +16,7 @@ def self.crc32_check(str, js_32_bit = true)
 
   str.length.times do |k|
     a = (crc >> 8)
-    b = ("0x" + table[((crc ^ str[k].ord ) & 0x000000FF)]).to_i(16)
+    b = Zlib::crc_table[((crc ^ str[k].ord ) & 0x000000FF)]
     crc = (a ^ b)
 
     if js_32_bit # See http://stackoverflow.com/questions/17056263/getting-the-same-result-from-ruby-as-javascript-for-bitwise-xor?noredirect=1#comment24669730_17056263
