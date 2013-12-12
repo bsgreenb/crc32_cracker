@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Crc32Cracker::VERSION
   spec.authors       = ["Ben Greenberg"]
   spec.email         = ["bsgreenb@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Cracker for CRC32 proof of work checks}
+  spec.summary       = %q{Cracker for CRC32 proof of work checks. This cracks the CRC32 javascript proof of work used to prevent scraping described here: http://jamespicuk.wordpress.com/2013/03/01/you-wouldnt-make-your-website-slower-on-purpose-would-you/}
   spec.homepage      = "https://github.com/bsgreenb/crc32_cracker"
   spec.license       = "MIT"
 
